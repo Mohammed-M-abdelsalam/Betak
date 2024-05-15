@@ -4,7 +4,7 @@
 <h1 class="text-center mt-5"> {{__("message.new property")}} </h1>
 <!-- From  Start -->
 <div class="container w-75 my-5">
-    <form action="{{route("properties.store")}}" method="post">
+    <form action="{{route("admin.properties.store")}}" method="post">
         @csrf
     <div class="form-group">
         <label class="col-form-label"> {{__("message.size")}} </label>
@@ -52,12 +52,7 @@
             <option value="{{$agent->id}}">{{$agent->name}}</option>
             @endforeach
         </select>
-        <select name="location" id="">
-        @foreach ($locations as $location)
-            <option value="{{$location->id}}">{{$location->name}}</option>
-        @endforeach
-    </select> <br>
-    <button class="mt-4 m-2 btn btn-dark">Add Property</button>
+        <button class="mt-4 m-2 btn btn-dark">Add Property</button>
     </form>
 </div>
 <!-- Form End  -->

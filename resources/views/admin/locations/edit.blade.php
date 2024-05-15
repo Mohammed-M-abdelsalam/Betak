@@ -3,7 +3,7 @@
 <h1 class="text-center mt-5">Change Location</h1>
 <!-- From  Start -->
 <div class="container w-75 my-5">
-    <form action="{{Route("locations.update", $location->id)}}" method="post">
+    <form action="{{Route("admin.locations.update", $location->id)}}" method="post">
         @csrf
         @method("put")
         <div class="form-group">

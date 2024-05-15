@@ -9,7 +9,7 @@
 <br />
 
 <div class="m-4 mx-auto my-5">
-    <form action="{{Route("locations.create")}}" method="get" class="row offset-2" asp-action="Index">
+    <form action="{{Route("admin.locations.create")}}" method="get" class="row offset-2" asp-action="Index">
         <div class="col-3">
             <button class="btn add-btn" type="submit" value="Search">{{ __("message.add") }}</button>
         </div>
@@ -34,7 +34,7 @@
                 @foreach ($location->compounds as $compound)
                     <ul style="display: inline">
                         <li>{{$compound->name}}
-                            <form style="display: inline" action="{{route("compounds.destroy", $compound->id)}}" method="post">
+                            <form style="display: inline" action="{{route("admin.compounds.destroy", $compound->id)}}" method="post">
                                 @csrf
                                 @method("delete")
                                 <button class="text-danger" style="border:none"  type="submit" >{{ __("message.delete") }}</button>
@@ -45,13 +45,13 @@
                 </td>
             </tr>
             <td>
-            <form  class="text-danger" action="{{route("locations.edit", $location->id)}}" method="get">
+            <form  class="text-danger" action="{{route("admin.locations.edit", $location->id)}}" method="get">
                 @csrf
                 <button class="text-warning" style="border:none"><i class="fas fa-edit"></i></button>
             </form>
             </td>
             <td>
-                <form  class="text-danger" action="{{route("locations.destroy", $location->id)}}" method="post">
+                <form  class="text-danger" action="{{route("admin.locations.destroy", $location->id)}}" method="post">
                     @csrf
                     @method("delete")
                     <button class="text-danger" style="border:none"><i class="fas fa-trash" ></i></button>

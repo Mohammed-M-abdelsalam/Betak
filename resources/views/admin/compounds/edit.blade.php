@@ -3,7 +3,7 @@
 <h1 class="text-center mt-5">New Compound</h1>
 <!-- From  Start -->
 <div class="container w-75 my-5">
-    <form action="{{Route("compounds.update", $compound->id)}}" method="post" enctype="multipart/form-data">
+    <form action="{{Route("admin.compounds.update", $compound->id)}}" method="post" enctype="multipart/form-data">
         @csrf
         @method("put")
         <div class="form-group">

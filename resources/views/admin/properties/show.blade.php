@@ -27,21 +27,22 @@
             </button>
     </div>
 
+<div>
     <div>
-    <div class="form">
-        @foreach ($property->image as $img)
-        <form style="text-align:center" action="{{route("images.destroy", $img->id)}}" method="post">
-            @csrf
-            @method("delete")
-            <div>
-                <button style="display: block" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{$loop->iteration - 1}}" class="active" aria-current="true" aria-label="Slide {{$loop->iteration}}">
-                    <img style="width: 50px; height: 50px; border-radius:10px" src="{{asset("storage/$img->img")}}" alt=""> <br>
-                </button>
-                <button class="">{{__("message.delete")}}</button>
-            </div>
-        </form>
-        @endforeach
-    </div>
+        <div class="form">
+            @foreach ($property->image as $img)
+            <form style="text-align:center" action="{{route("admin.images.destroy", $img->id)}}" method="post">
+                @csrf
+                @method("delete")
+                <div>
+                    <button style="display: block" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{$loop->iteration - 1}}" class="active" aria-current="true" aria-label="Slide {{$loop->iteration}}">
+                        <img style="width: 50px; height: 50px; border-radius:10px" src="{{asset("storage/$img->img")}}" alt=""> <br>
+                    </button>
+                    <button class="">{{__("message.delete")}}</button>
+                </div>
+            </form>
+            @endforeach
+        </div>
         <br>
     </div>
 
@@ -56,6 +57,7 @@
         <p>{{__("message.agent")}}: {{$property->agent->name}} </p>
         <p>{{__("message.description")}}: <span class="desc">{{$property->$description}}</span></p>
     </div>
-</div>
+  </div>
 
-    @endsection
+</div>
+@endsection

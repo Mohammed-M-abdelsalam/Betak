@@ -3,7 +3,7 @@
 <h1 class="text-center mt-5">Change Agent</h1>
 <!-- From  Start -->
 <div class="container w-75 my-5">
-    <form action="{{route("agents.update", $agent->id)}}" method="post">
+    <form action="{{route("admin.agents.update", $agent->id)}}" method="post">
         @csrf
         @method("put")
     <div class="form-group">

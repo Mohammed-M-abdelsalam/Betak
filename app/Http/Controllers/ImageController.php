@@ -15,7 +15,7 @@ class ImageController extends Controller
 
     public function create($id){
         $property = Property::findorfail($id);
-        return view("images.create", compact("property"));
+        return view("admin.images.create", compact("property"));
     }
 
     public function store($id, Request $request){
@@ -27,7 +27,7 @@ class ImageController extends Controller
             "img" => $img,
             "property_id" => $id,
         ]);
-        return redirect(route("properties.index"));
+        return redirect(route("admin.properties.index"));
     }
 
 
@@ -38,6 +38,6 @@ class ImageController extends Controller
         }
         $img->delete();
 
-        return redirect(route("properties.show", $img->property->id));
+        return redirect(route("admin.properties.show", $img->property->id));
     }
 }

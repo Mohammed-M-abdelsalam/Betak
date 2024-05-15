@@ -24,9 +24,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware("auth", "admin", "verified")->group(function(){
+Route::middleware("auth", "admin", "verified")->name("admin.")->group(function(){
 
-    Route::get("index", [AdminController::class, "index"])->name("admin.index");
+    Route::get("index", [AdminController::class, "index"])->name("index");
 
     Route::controller(CategoryController::class)->group(function(){
         Route::resource('categories', CategoryController::class);
@@ -46,7 +46,7 @@ Route::middleware("auth", "admin", "verified")->group(function(){
 
 
     Route::controller(PropertyController::class)->group(function(){
-        Route::resource('properties', PropertyController::class)->except("show");
+        Route::resource('properties', PropertyController::class);
     });
 
     Route::controller(ImageController::class)->group(function(){
@@ -58,9 +58,7 @@ Route::middleware("auth", "admin", "verified")->group(function(){
         Route::delete("images/{img}", "destroy")->name("images.destroy");
     });
 
-    Route::controller(LanguageController::class)->group(function(){
-        Route::get("lang/{lang}", "local")->name("local");
-    });
+
 });
 
 

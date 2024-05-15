@@ -3,7 +3,7 @@
 <h1 class="text-center mt-5">{{__("message.add category")}}</h1>
 <!-- From  Start -->
 <div class="container w-75 my-5">
-    <form action="{{Route("categories.store")}}" method="post">
+    <form action="{{Route("admin.categories.store")}}" method="post">
         @csrf
     <div class="form-group">
         <label class="col-form-label">{{__("message.name")}}</label>

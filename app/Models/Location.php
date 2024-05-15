@@ -14,4 +14,7 @@ class Location extends Model
     public function compounds(){
         return $this->hasMany(Compound::class);
     }
+    public function property(){
+        return $this->hasMany(Property::class);
+    }
 }

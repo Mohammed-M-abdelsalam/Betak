@@ -3,7 +3,7 @@
 <h1 class="text-center mt-5">{{__("message.new compound")}}</h1>
 <!-- From  Start -->
 <div class="container w-75 my-5">
-    <form action="{{Route("compounds.store")}}" method="post" enctype="multipart/form-data">
+    <form action="{{Route("admin.compounds.store")}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label class="col-form-label">{{__("message.name")}}</label>

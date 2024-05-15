@@ -149,9 +149,10 @@ body{
 
 .card{
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    align-items: center;
     margin: 10px auto;
-    width: 50%;
+    width: 80%;
     box-shadow: 0 0 15px #9dacbc;
 }
 .card .form{
@@ -169,6 +170,7 @@ body{
 .card-content{
     font-weight: bolder;
     font-size: large;
+    margin-left: 20px;
     color: var(--text);
     padding: 0 10px;
 }
@@ -179,17 +181,15 @@ font-size: small;
 font-weight: 500;
 }
 
-.card-content p{
-    margin: 0;
-}
 
 
 .carousel{
-    max-width: 100%;
+    max-width: 50%;
+    height: 100%;
 }
 
 .carousel-item img{
-    aspect-ratio: 4/3;
+    aspect-ratio: 3/3;
 }
 .carousel-control-next, .carousel-control-prev{
     font-size: 10px;
@@ -252,12 +252,22 @@ table{
 }
 
 
-@media(max-width:600px){
+@media(max-width:700px){
     .actions{
         display: none;
     }
 
     .card{
         width: 60%;
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .carousel{
+        max-width: 100%;
+    }
+
+    .carousel-item img{
+        aspect-ratio: 4/3;
     }
 }

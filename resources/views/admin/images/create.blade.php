@@ -4,7 +4,7 @@
 <h1 class="text-center mt-5">Add Image</h1>
 
 <div class="container my-5 mx-auto w-75">
-    <form action="{{route("images.store", $property->id)}}" method="post" enctype="multipart/form-data">
+    <form action="{{route("admin.images.store", $property->id)}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="formFile" class="form-label">Add Image</label>

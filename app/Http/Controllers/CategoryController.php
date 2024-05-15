@@ -13,7 +13,7 @@ class CategoryController extends Controller
 {
     public function index(){
         $categories = Category::all();
-        return view("categories.index")->with("categories", $categories);
+        return view("admin.categories.index")->with("categories", $categories);
     }
 
     public function show(){
@@ -21,7 +21,7 @@ class CategoryController extends Controller
     }
 
     public function create(){
-        return view("categories.create");
+        return view("admin.categories.create");
     }
 
     public function store(Request $request){
@@ -31,18 +31,18 @@ class CategoryController extends Controller
         Category::create([
             "name" => $request->name,
         ]);
-        return redirect(Route("categories.index"));
+        return redirect(Route("admin.categories.index"));
     }
 
     public function destroy($id){
         $category = Category::findorfail($id);
         $category->delete();
-        return redirect(Route("categories.index"));
+        return redirect(Route("admin.categories.index"));
     }
 
     public function edit($id){
         $category = Category::findorfail($id);
-        return view("categories.edit")->with("category", $category);
+        return view("admin.categories.edit")->with("category", $category);
     }
 
     public function update($id, Request $request){
@@ -53,7 +53,7 @@ class CategoryController extends Controller
         $category->update([
             "name" => $request->name,
         ]);
-        return redirect(Route("categories.index"));
+        return redirect(Route("admin.categories.index"));
     }
 
 }

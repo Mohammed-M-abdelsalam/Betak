@@ -16,21 +16,21 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ __("message.add") }}</a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a  class="dropdown-item" href="{{Route("properties.create")}}" >{{ __("message.property") }}</a>
-                            <a  class="dropdown-item" href="{{Route("categories.create")}}">{{ __("message.category") }}</a>
-                            <a  class="dropdown-item" href="{{Route("locations.create")}}">{{ __("message.location") }}</a>
-                            <a  class="dropdown-item" href="{{Route("compounds.create")}}">{{ __("message.compound") }}</a>
-                            <a  class="dropdown-item" href="{{Route("agents.create")}}">{{ __("message.agent") }}</a>
+                            <a  class="dropdown-item" href="{{Route("admin.properties.create")}}" >{{ __("message.property") }}</a>
+                            <a  class="dropdown-item" href="{{Route("admin.categories.create")}}">{{ __("message.category") }}</a>
+                            <a  class="dropdown-item" href="{{Route("admin.locations.create")}}">{{ __("message.location") }}</a>
+                            <a  class="dropdown-item" href="{{Route("admin.compounds.create")}}">{{ __("message.compound") }}</a>
+                            <a  class="dropdown-item" href="{{Route("admin.agents.create")}}">{{ __("message.agent") }}</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ __("message.view") }}</a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a  class="dropdown-item" href="{{Route("properties.index")}}" >{{ __("message.property") }}</a>
-                            <a  class="dropdown-item" href="{{Route("categories.index")}}">{{ __("message.category") }}</a>
-                            <a  class="dropdown-item" href="{{Route("locations.index")}}">{{ __("message.location") }}</a>
-                            <a  class="dropdown-item" href="{{Route("compounds.index")}}">{{ __("message.compound") }}</a>
-                            <a  class="dropdown-item" href="{{Route("agents.index")}}">{{ __("message.agent") }}</a>
+                            <a  class="dropdown-item" href="{{Route("admin.properties.index")}}" >{{ __("message.property") }}</a>
+                            <a  class="dropdown-item" href="{{Route("admin.categories.index")}}">{{ __("message.category") }}</a>
+                            <a  class="dropdown-item" href="{{Route("admin.locations.index")}}">{{ __("message.location") }}</a>
+                            <a  class="dropdown-item" href="{{Route("admin.compounds.index")}}">{{ __("message.compound") }}</a>
+                            <a  class="dropdown-item" href="{{Route("admin.agents.index")}}">{{ __("message.agent") }}</a>
                             <a  class="dropdown-item" href="#">{{ __("message.users") }}</a>
                         </div>
                     </div>

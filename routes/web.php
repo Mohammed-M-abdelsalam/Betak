@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\CompoundController;
+use App\Http\Controllers\CompoundPropertyController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\LocationController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\UserController;
 use App\Models\Compound;
@@ -23,7 +26,9 @@ Route::middleware("auth")->group(function(){
 
     Route::get('/', [HomeController::class, "redirect"]);
 
-
+    Route::controller(LanguageController::class)->group(function(){
+        Route::get("lang/{lang}", "local")->name("local");
+    });
 
     Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified',])->group(function () {
         Route::get('/dashboard', function () {
@@ -35,14 +40,19 @@ Route::middleware("auth")->group(function(){
             Route::get("home", "index")->name("user.index");
         });
 
-        Route::controller(CompoundController::class)->group(function(){
-            Route::get("compound/{compound}", "show")->name("compound.show");
+        Route::controller(LocationController::class)->group(function(){
+            Route::get("location/{location}/{category?}", "show")->name("locations.show");
+        });
 
+        Route::controller(CompoundController::class)->group(function(){
+            Route::get('compounds/search', "search")->name("compounds.search");
         });
 
         Route::controller(PropertyController::class)->group(function(){
             Route::get('proterities', "index")->name("properties.index");
             Route::get('proterities/{properties}', "show")->name("properties.show");
+            Route::get('compare/{property1?}/{type?}/{property2?}', "compare")->name("properties.compare");
+            Route::get('properties/search/{compound}', "search")->name("properties.search");
         });
 
 

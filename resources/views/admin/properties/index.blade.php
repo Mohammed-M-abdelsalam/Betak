@@ -9,7 +9,7 @@
 <br/>
 
 <div class="m-4 mx-auto my-5">
-    <form action="{{Route("properties.create")}}" method="get" class="row offset-2" asp-action="Index">
+    <form action="{{Route("admin.properties.create")}}" method="get" class="row offset-2" asp-action="Index">
         <div class="col-3">
             <button class="btn add-btn" type="submit" value="Search">{{ __("message.add") }}</button>
         </div>
@@ -39,16 +39,16 @@
 
             </tr>
             <tr>
-                <td><a  class="text-info" href="{{route("properties.show", $property->id)}}"><i class="fas fa-eye " ></i> <span class="actions">Show</span> </a></td>
+                <td><a  class="text-info" href="{{route("admin.properties.show", $property->id)}}"><i class="fas fa-eye " ></i> <span class="actions">Show</span> </a></td>
                 <td>
-                    <form  class="text-warning" action="{{route("properties.edit", $property->id)}}" method="get">
+                    <form  class="text-warning" action="{{route("admin.properties.edit", $property->id)}}" method="get">
                         @csrf
                         <button class="text-warning" style="border:none"><i class="fas fa-edit"></i> <span class="actions">Edit</span></button>
                     </form>
                 </td>
 
                 <td>
-                    <form  class="text-danger" action="{{route("properties.destroy", $property->id)}}" method="post">
+                    <form  class="text-danger" action="{{route("admin.properties.destroy", $property->id)}}" method="post">
                         @csrf
                         @method("delete")
                         <button class="text-danger" style="border:none"><i class="fas fa-trash" ></i> <span class="actions">Delete</span></button>
@@ -56,7 +56,7 @@
                 </td>
 
                 <td>
-                    <form  class="text-danger" action="{{route("images.create", $property->id)}}" method="get">
+                    <form  class="text-danger" action="{{route("admin.images.create", $property->id)}}" method="get">
                         @csrf
                         <button class="add-img" style="border:none"> {{ __("message.add img") }} </button>
                     </form>

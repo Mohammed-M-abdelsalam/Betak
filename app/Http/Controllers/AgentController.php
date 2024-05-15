@@ -10,7 +10,7 @@ class AgentController extends Controller
 {
     public function index(){
         $agents = Agent::all();
-        return view("agents.index", compact("agents"));
+        return view("admin.agents.index", compact("agents"));
     }
 
     public function show(){
@@ -18,7 +18,7 @@ class AgentController extends Controller
     }
 
     public function create(){
-        return view("agents.create");
+        return view("admin.agents.create");
     }
     public function store(Request $request){
         $request->validate([
@@ -31,18 +31,18 @@ class AgentController extends Controller
             "email" => $request->email,
             "phone" => $request->phone,
         ]);
-        return redirect(Route("agents.index"));
+        return redirect(Route("admin.agents.index"));
     }
 
     public function destroy($id){
         $agent = Agent::findorfail($id);
         $agent->delete();
-        return redirect(Route("agents.index"));
+        return redirect(Route("admin.agents.index"));
     }
 
     public function edit($id){
         $agent = Agent::findorfail($id);
-        return view("agents.edit", compact("agent"));
+        return view("admin.agents.edit", compact("agent"));
     }
     public function update($id, Request $request){
         $agent = Agent::findorfail($id);
@@ -56,7 +56,7 @@ class AgentController extends Controller
             "email" => $request->email,
             "phone" => $request->phone,
         ]);
-        return redirect(Route("agents.index"));
+        return redirect(Route("admin.agents.index"));
     }
 
 }

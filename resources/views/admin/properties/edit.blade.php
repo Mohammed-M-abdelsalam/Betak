@@ -4,7 +4,7 @@
 <h1 class="text-center mt-5">Change Property</h1>
 <!-- From  Start -->
 <div class="container w-75 my-5">
-    <form action="{{route("properties.update", $property->id)}}" method="post">
+    <form action="{{route("admin.properties.update", $property->id)}}" method="post">
         @csrf
         @method("put")
         <div class="form-group">
@@ -63,16 +63,7 @@
             <option value="{{$agent->id}}">{{$agent->name}}</option>
             @endforeach
         </select>
-
-        <select name="location" id="">
-            <option value="{{$property->location->id}}">{{$property->location->name}}</option>
-            @foreach ($locations as $location)
-                @if ($location->id == $property->location->id)
-                    @continue
-                @endif
-                <option value="{{$location->id}}">{{$location->name}}</option>
-            @endforeach
-        </select> <br>
+        
         <button class="mt-4 m-2 btn btn-dark"> {{__("message.edit property")}} </button>
     </form>
 </div>
